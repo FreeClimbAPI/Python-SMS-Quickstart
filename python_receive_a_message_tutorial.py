@@ -21,7 +21,6 @@ app = Flask(__name__)
 @app.route('/incomingSms', methods=['POST'])
 def incomingSms():
     if request.method == 'POST':
-        # print(request.data)
         message = "Hello! You texted FreeClimb's Python SDK the following: " + request.json['text']
         message_request = freeclimb.MessageRequest(to=request.json['from'], _from=request.json['to'], text=message)
         api_instance.send_an_sms_message(account_id=configuration.username, message_request=message_request)
