@@ -1,6 +1,6 @@
 # Python - Receive A Message Tutorial
 
-This project serves as a guide to help you build an application with FreeClimb. View this tutorial on [FreeClimb.com](https://docs.freeclimb.com/docs). Specifically, the project will:
+This project serves as a guide to help you build an application with FreeClimb. View this tutorial on [FreeClimb.com](https://docs.freeclimb.com/docs/how-to-receive-a-message#section-python). Specifically, the project will:
 
 - Accepts incoming SMS messages and respond to them
 
