@@ -21,8 +21,8 @@ app = Flask(__name__)
 @app.route('/incomingSms', methods=['POST'])
 def incomingSms():
     message = "Hello World!"
-    _from = "+19784784240"
-    to = "+13172245552"
+    _from = "" #Your FreeClimb Number
+    to = "" #Your number
     message_request = MessageRequest(_from=_from, text=message, to=to)
     api_instance.send_an_sms_message(message_request)
 
