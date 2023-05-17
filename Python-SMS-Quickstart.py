@@ -20,14 +20,14 @@ app = Flask(__name__)
 # Specify this route with 'SMS URL' in App Config
 @app.route('/incomingSms', methods=['POST'])
 def incomingSms():
-    message = "Hello World!"
-    _from = "" #Your FreeClimb Number
-    to = "" #Your number
-    message_request = MessageRequest(_from=_from, text=message, to=to)
-    api_instance.send_an_sms_message(message_request)
+    if request.method == 'POST':
+        message = "Hello World!"
+        _from = "" #Your FreeClimb Number
+        to = request.json['from']
+        message_request = MessageRequest(_from=_from, text=message, to=to)
+        api_instance.send_an_sms_message(message_request)
 
-    return json.dumps({'success':True}), 200, {'ContentType':'application/json'} 
-
+        return json.dumps({'success':True}), 200, {'ContentType':'application/json'} 
 
 # Specify this route with 'STATUS CALLBACK URL' in App Config
 @app.route('/status', methods=['POST'])
