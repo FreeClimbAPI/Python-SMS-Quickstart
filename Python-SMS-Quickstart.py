@@ -7,7 +7,6 @@ import json
 from flask import Flask, request
 
 configuration = freeclimb.Configuration(
-    host = "https://www.freeclimb.com/apiserver",
     username = os.environ['ACCOUNT_ID'],
     password = os.environ['API_KEY']
 )
