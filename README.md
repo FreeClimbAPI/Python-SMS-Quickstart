@@ -24,6 +24,7 @@ Tools:
 - [Python](https://www.python.org/downloads/) 3.5.0 or higher
 - [Yarn](https://yarnpkg.com/en/)
 - [ngrok](https://ngrok.com/download) (recommended for hosting)
+- [pip](https://pypi.org/project/pip/)
 
 ## Setting up the Quickstart
 1. Install the required packages
