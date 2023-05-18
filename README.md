@@ -22,7 +22,6 @@ Trial accounts: a [verified number](https://docs.freeclimb.com/docs/using-your-t
 
 Tools:
 - [Python](https://www.python.org/downloads/) 3.5.0 or higher
-- [Yarn](https://yarnpkg.com/en/)
 - [ngrok](https://ngrok.com/download) (recommended for hosting)
 - [pip](https://pypi.org/project/pip/)
 
