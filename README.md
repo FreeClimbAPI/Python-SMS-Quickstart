@@ -35,7 +35,7 @@ Tools:
    pip install -r requirements.txt
    ```
 
-2. Configure environment variables:
+2. Configure environment variables in separate env file:
 
    | ENV VARIABLE | DESCRIPTION                                                                                                                            |
    | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,14 @@ Tools:
    | -------- | ---------------------------------------------------------------------------- |
    | FROM     | The number that sends messages from your application. Your FreeClimb number. |
 
-4. [Configure your applications's endpoints](https://docs.freeclimb.com/docs/registering-and-configuring-an-application#configure-your-application) by adding a publicly accessible URL (we recommend an [ngrok](https://ngrok.com/download) URL) and the route reference `/incomingSms` to your App Config's SMS URL field:
+4. Start ngrok
+
+   ```bash
+
+      ngrok http 5000
+   ```
+
+5. [Configure your applications's endpoints](https://docs.freeclimb.com/docs/registering-and-configuring-an-application#configure-your-application) by adding a publicly accessible URL (we recommend an [ngrok](https://ngrok.com/download) URL) and the route reference `/incomingSms` to your App Config's SMS URL field:
 
    ```bash
    https://YOUR-URL.ngrok.io/incomingSms
