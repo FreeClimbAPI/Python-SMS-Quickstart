@@ -32,7 +32,7 @@ Tools:
 1. Install the required packages
 
    ```bash
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 
 2. Configure environment variables in separate env file:
