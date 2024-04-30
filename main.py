@@ -8,6 +8,11 @@ load_dotenv()
 account_id = os.environ.get("ACCOUNT_ID")
 api_key = os.environ.get("API_KEY")
 api_server = os.environ.get("API_SERVER", "https://www.freeclimb.com/apiserver")
+from_number = os.environ.get("FREECLIMB_NUMBER")
+
+if not account_id or not api_key or not from_number:
+    print("ERROR: ENVIRONMENT VARIABLES ARE NOT SET. PLEASE SET ALL ENVIRONMMENT VARIABLES AND RETRY.")
+    quit()
 
 app = Flask(__name__)
 
@@ -25,7 +30,7 @@ api_instance = default_api.DefaultApi(api_client)
 def incomingSms():
     if request.method == 'POST':
         message = "Hello World!"
-        _from = os.environ.get("FREECLIMB_NUMBER") #Your FreeClimb Number
+        _from = from_number #Your FreeClimb Number
         to = request.json['from']
         message_request = freeclimb.MessageRequest(_from=_from, text=message, to=to)
         api_instance.send_an_sms_message(message_request)
