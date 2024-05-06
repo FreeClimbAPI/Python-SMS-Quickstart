@@ -29,7 +29,7 @@ api_instance = default_api.DefaultApi(api_client)
 @app.route('/incomingSms', methods=['POST'])
 def incomingSms():
     if request.method == 'POST':
-        message = "Hello World!"
+        message = "Hello, World!"
         _from = from_number #Your FreeClimb Number
         to = request.json['from']
         message_request = freeclimb.MessageRequest(_from=_from, text=message, to=to)
