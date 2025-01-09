@@ -34,12 +34,12 @@ def incomingSms():
         to = request.json['from']
         message_request = freeclimb.MessageRequest(_from=_from, text=message, to=to)
         api_instance.send_an_sms_message(message_request)
-        return jsonify({'success':True}), 200, {'ContentType':'application/json'} 
+        return jsonify({'success':True})
 
 # Specify this route with 'STATUS CALLBACK URL' in App Config
 @app.route('/status', methods=['POST'])
 def status():
-    return jsonify({'success':True}), 200, {'ContentType':'application/json'} 
+    return jsonify({'success':True})
 
 
 def quickstart_tutorial():
@@ -54,6 +54,15 @@ def quickstart_tutorial():
     print("\t2. In the Dashboard or API, set your FreeClimb Application Voice Url to the dynamic endpoint NGROK generated.\n")
     print(api_server)
 
+# Liveness probe endpoint
+@app.route('/live', methods=['GET'])
+def live():
+    return jsonify({'status': 'live'})
+
+# Readiness probe endpoint
+@app.route('/ready', methods=['GET'])
+def ready():
+    return jsonify({'status': 'ready'})
 
 if __name__ == '__main__':
     quickstart_tutorial()
